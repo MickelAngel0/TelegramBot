@@ -152,11 +152,11 @@ dispatcher.add_handler(MessageHandler(Filters.command, Command))
 dispatcher.add_handler(MessageHandler(Filters.all, Main))
 
 
-updater.start_polling()
-'''
+#updater.start_polling()
+
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
-updater.bot.set_webhook('https:// <site> /' + TOKEN)
-'''
+updater.bot.set_webhook('https://api.telegram.org/bot' + TOKEN)
+
 updater.idle()
